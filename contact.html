@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+        <h1>Contact Us</h1>
+         
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to work with us? Drop us a message!</p>
+            <form id="contact-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit" id="submit-btn">Send Message</button>
+            </form>
+            <div id="success-message" style="display: none; color: green;">Form submitted successfully!</div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select the contact form and success message element
+            const contactForm = document.getElementById("contact-form");
+            const successMessage = document.getElementById("success-message");
+        
+            // Add submit event listener
+            contactForm.addEventListener("submit", function(event) {
+                // Prevent default form submission
+                event.preventDefault();
+        
+                // Display success message
+                successMessage.style.display = "block";
+        
+                // Reset form fields (optional)
+                contactForm.reset();
+            });
+        });
+        
+    </script>
+</body>
+</html>
